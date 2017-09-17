@@ -1,7 +1,7 @@
 /**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
+ * 
+ * Android index file
+ * 
  */
 
 import React from 'react';
