@@ -7,14 +7,14 @@ import {
 } from 'react-native';
 import Logo from "../components/Logo"
 import PlayButton from "../components/PlayButton"
-import ModalDropdown from "react-native-modal-dropdown"
+import Selector from "../components/Selector"
 
 class App extends Component {
   render() {
     return (
       <View style={styles.container}>
         <Logo />
-        <ModalDropdown options={['Game 1', 'Game 2']}/>
+        <Selector />
         <PlayButton />
       </View>
     );
