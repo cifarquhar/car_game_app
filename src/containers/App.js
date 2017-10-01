@@ -3,19 +3,30 @@ import {
   AppRegistry,
   StyleSheet,
   Text,
-  View
+  View,
+  Button
 } from 'react-native';
+import { StackNavigator } from "react-navigation"
 import Logo from "../components/Logo"
 import PlayButton from "../components/PlayButton"
-import Selector from "../components/Selector"
+import Game from "./Game"
 
 class App extends Component {
+
+  static navigationOptions = {
+    title: "Welcome to CarGameApp!",
+  }
+
   render() {
+    const { navigate } = this.props.navigation
+
     return (
       <View style={styles.container}>
         <Logo />
-        <Selector />
-        <PlayButton />
+        <Button 
+          onPress={() => navigate("Game")}
+          title="Play"
+        />
       </View>
     );
   }
@@ -40,4 +51,8 @@ const styles = StyleSheet.create({
   },
 });
 
-export default App
+export default App= StackNavigator({
+  Home: {screen: App},
+  Game: {screen: Game}
+})
+

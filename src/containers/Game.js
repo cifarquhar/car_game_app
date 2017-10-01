@@ -2,19 +2,26 @@ import React, {Component} from "react"
 import {
   StyleSheet,
   View,
-  Text
+  Text,
+  Button
 } from "react-native"
+import { StackNavigator } from "react-navigation"
+import Selector from "../components/Selector"
 
 class Game extends Component {
 
-  constructor(props){
-    super(props)
-  }
+  static navigationOptions = ({navigation}) => ({
+    title: "Choose a game to play",
+  })
 
   render(){
     return(
       <View>
-        <Text>Game stuff goes in here</Text>
+        <Selector />
+        <Button
+          onPress={() => console.log("pressed")}
+          title="Start"
+        />
       </View>
     )
   }
