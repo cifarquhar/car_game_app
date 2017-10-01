@@ -9,6 +9,7 @@ import {
 import { StackNavigator } from "react-navigation"
 import Logo from "../components/Logo"
 import PlayButton from "../components/PlayButton"
+import GameSelection from "./GameSelection"
 import Game from "./Game"
 
 class App extends Component {
@@ -24,7 +25,7 @@ class App extends Component {
       <View style={styles.container}>
         <Logo />
         <Button 
-          onPress={() => navigate("Game")}
+          onPress={() => navigate("GameSelection")}
           title="Play"
         />
       </View>
@@ -53,6 +54,7 @@ const styles = StyleSheet.create({
 
 export default App= StackNavigator({
   Home: {screen: App},
+  GameSelection: {screen: GameSelection},
   Game: {screen: Game}
 })
 

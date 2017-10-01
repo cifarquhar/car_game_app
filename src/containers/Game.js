@@ -6,22 +6,17 @@ import {
   Button
 } from "react-native"
 import { StackNavigator } from "react-navigation"
-import Selector from "../components/Selector"
 
 class Game extends Component {
 
   static navigationOptions = ({navigation}) => ({
-    title: "Choose a game to play",
+    title: "<-- name goes here -->",
   })
 
   render(){
     return(
       <View>
-        <Selector />
-        <Button
-          onPress={() => console.log("pressed")}
-          title="Start"
-        />
+        <Text>Game buttons go in here</Text>
       </View>
     )
   }
