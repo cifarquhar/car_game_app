@@ -6,6 +6,7 @@ import {
   Button
 } from "react-native"
 import { StackNavigator } from "react-navigation"
+import ChoiceButton from "../components/ChoiceButton"
 
 class Game extends Component {
 
@@ -40,9 +41,8 @@ class Game extends Component {
 
     let buttons = buttonNames.map((name,index) => {
       return(
-        <Button 
+        <ChoiceButton 
           key={index}
-          onPress={() => console.log(name + " pressed")}
           title={name}
         />
       )
