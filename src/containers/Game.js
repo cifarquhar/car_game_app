@@ -3,16 +3,37 @@ import {
   StyleSheet,
   ScrollView,
   Text,
-  Button
+  Button,
+  View,
+  Alert
 } from "react-native"
 import { StackNavigator } from "react-navigation"
 import ChoiceButton from "../components/ChoiceButton"
+import Score from "../components/Score"
 
 class Game extends Component {
+
+  constructor(props){
+    super(props)
+
+    let playerScore = 0
+    this.playerScore = playerScore  
+  }
 
   static navigationOptions = ({navigation}) => ({
     title: navigation.state.params.gameType,
   })
+
+  checkWinner(category,score){
+    if (score = category.length){
+      Alert.alert("Congratulations, you found them all!")
+    }
+  }
+
+  handlePress(category){
+    this.playerScore += 1
+    this.checkWinner(category,this.playerScore)
+  }
 
   render(){
 
@@ -44,14 +65,18 @@ class Game extends Component {
         <ChoiceButton 
           key={index}
           title={name}
+          // onPress={this.handlePress(buttonNames)}
         />
       )
     })
 
     return(
-      <ScrollView>
-        {buttons}
-      </ScrollView>
+      <View>
+        <Score score={this.playerScore}/>
+        <ScrollView>
+          {buttons}
+        </ScrollView>
+      </View>
     )
   }
 
