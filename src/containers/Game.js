@@ -18,6 +18,7 @@ class Game extends Component {
     this.state = {
       score: 0
     }
+    this.currentScore = 0
     this.targetScore = 0
   }
 
@@ -26,13 +27,14 @@ class Game extends Component {
   })
 
   checkWinner(){
-    const s = this.state
-    if (s.score === this.targetScore){
+    // const s = this.state
+    if (this.currentScore === this.targetScore){
       Alert.alert("Congratulations, you found them all!")
     }
   }
 
   handlePress(){
+    this.currentScore += 1
     this.setState({score: this.state.score + 1})
     this.checkWinner()
   }
