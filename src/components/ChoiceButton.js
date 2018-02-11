@@ -12,7 +12,7 @@ class ChoiceButton extends Component {
       pressed: false
     }
 
-    this.handlePress = this.handlePress.bind(this)
+    this.handlePress = this.props.handlePress
   }
 
   handlePress(){
